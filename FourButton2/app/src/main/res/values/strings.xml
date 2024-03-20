@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FourButton!</string>
+    <string name="strBtn1">무슨색 버튼</string>
+    <string name="strBtn2">무슨색 버튼</string>
+    <string name="strBtn3">무슨색 버튼</string>
+    <string name="strBtn4">끝내기</string>
+</resources>
