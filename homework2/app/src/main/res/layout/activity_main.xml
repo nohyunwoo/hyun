@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="선택을 시작하시겠습니까?" />
+
+    <Switch
+        android:id="@+id/ChkAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작함" />
+
+    <TextView
+        android:id="@+id/Text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="좋아하는 동물은?"
+        android:visibility="invisible"/>
+
+    <RadioGroup
+        android:id="@+id/RGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/RdoAnd12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="강아지" />
+
+        <RadioButton
+            android:id="@+id/RdoAnd13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="고양이" />
+
+        <RadioButton
+            android:id="@+id/RdoAnd14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="사슴" />
+
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ImgAnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dog2" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="종료" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="처음으로" />
+</LinearLayout>
