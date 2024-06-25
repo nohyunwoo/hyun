@@ -6,7 +6,7 @@ def profile(name, age, *language):
     print()
     print("보이나요")
 
-    print("안보이나요?")
+    print("안보이나요??????????????????????")
+    print("뭐가 문제일까?")
 profile("노현우", 25, "파이썬", "자바", "C", "C++", "C#")
 profile("박기훈", 24, "코틀린", "스위프트","", "", "")
-p
