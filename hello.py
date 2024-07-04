@@ -1,28 +1,53 @@
+class Unit:
+    def __init__(self, name, hp, speed):
+        self.name = name
+        self.hp = hp
+        self.speed = speed
 
-def attack(name, location, damage):
-    print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]".format(name, location, damage))
+    def move(self, location):
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]".format(self.name, location, self.speed))
+class AttackUnit(Unit):
+    def __init__(self, name, hp, damage, speed):
+        Unit. __init__(self, name, hp, speed)
+        self.damage = damage
 
-name = "보병"
-hp = 40
-damage = 5
+    def attack(self, location):
+        print("{0} : {1} 방향 적군을 공격합니다. [공격력 {2}]".format(self.name, location, self.damage))
 
-print("{} 유닛을 생성했습니다.".format(name))
-print("체력 {0}, 공격력 {1}\n".format(hp,damage))
+    def damaged(self, damage):
+        print("{0} : {1}만큼 피해를 입었습니다.".format(self.name, damage))
+        self.hp -= damage
+        print("{0} : 현재 체력은 {1}입니다.".format(self.name, self.hp))
+        if self.hp <= 0:
+            print("{0} : 파괴되었습니다.".format(self.name))
 
-tank_name = "탱크"
-tank_hp = 150
-tank_damage = 35
+class Flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+    
+    def fly(self, name, location):
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]".format(name, location, self.flying_speed))
 
-print("{} 유닛을 생성했습니다.".format(tank_name))
-print("체력 {0}, 공격력 {1}\n".format(tank_hp,tank_damage))
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit. __init__(self, name, hp, damage, 0)
+        Flyable. __init__(self, flying_speed)
+    
+    def move(self, location):
+        print("[공중 유닛 이동]")
+        self.fly(self.name, location)
 
-tank2_name = "탱크"
-tank2_hp = 150
-tank2_damage = 35
+hoverbike = AttackUnit("호버 바이크", 80, 20, 10) # 지상유닛
+spaceruiser = FlyableAttackUnit("우주 순양함", 500, 25, 3)
+hoverbike.move("11시")
+spaceruiser.move("9시")
 
-print("{} 유닛을 생성했습니다.".format(tank2_name))
-print("체력 {0}, 공격력 {1}\n".format(tank2_hp,tank2_damage))
+# intercetor = FlyableAttackUnit("요격기", 200, 6, 5)
+# intercetor.fly(intercetor.name, "3시")
+# intercetor.attack("3시")
 
-attack(name, "1시", damage)
-attack(tank_name, "11사", tank_damage)
-attack(tank_name, "11사", tank2_damage)
+# flamethrower1 = AttackUnit("화염방사병", 50, 16)
+# flamethrower1.attack("3시")
+# flamethrower1.damaged(25)
+# flamethrower1.damaged(25)
