@@ -5,3 +5,10 @@
     border-radius: 5px;
     display: none;
 }
+.alert-box2{
+    background: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    display: none;
+}
