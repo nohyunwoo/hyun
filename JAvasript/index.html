@@ -8,6 +8,41 @@
     <link href="Main.css" rel="stylesheet">
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control">
+           </div>
+           <button id = ids type="submit" class="btn btn-primary">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div> 
+
+    <script>
+      document.querySelector('#ids').addEventListener('click', function(e){
+        if (document.querySelectorAll('.form-control')[0].value == '') { // id 라는 id 를 선택하고 해당 input이 공백일 경우
+          e.preventDefault() // 폼 전송을 막음
+          alert('아이디를 입력해주세요') // '아이디를 입력해주세요' 라는 경고창을 띄움
+        }
+        if (document.querySelectorAll('.form-control')[1].value == '') { 
+          e.preventDefault()
+          alert('비밀번호를 입력하세요')}
+        })
+
+
+    </script>
+
+
+
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand">Navbar</span>
@@ -24,11 +59,30 @@
         <li class="list-group-item">And a fifth one</li>
       </ul>
 
+        <div class="main-bg">
+          <h4>Shirts on Sale</h4>
+          <form>
+            
+          </form>
+          <button id =login class="btn btn-danger">로그인</button>
+        </div>
+
+    
+      <script>
+        $('#login').on('click', function(){
+          $('.black-bg').addClass('show-modal')
+        })
+        $('#close').on('click', function(){
+          $('.black-bg').removeClass('show-modal')
+        })
+      </script>
+
+
       <script>
 
         document.querySelector('#test1')
 
-        document.getElementsByClassName('navbar-toggler')[0]
+        document.querySelector('.navbar-toggler')
         .addEventListener('click', function(){
             document.getElementsByClassName('list-group')[0].classList.toggle('show');
         })
@@ -36,21 +90,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
   </body>
 </html>
 

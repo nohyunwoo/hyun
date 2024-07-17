@@ -1,8 +1,12 @@
-a, b= input().split()
+result = 0
+n = int(input())
+i = 1
+while(True):
+    result += i
+    if result < n:
+       i += 1
+       continue
+    if result >= n:
+        print(i)
+        break
 
-print(int(a)+int(b))
-print(int(a)-int(b))
-print(int(a)*int(b))
-print(int(a)//int(b))
-print(int(a)%int(b))
-print(format(float(a)/float(b), ".2f"))
